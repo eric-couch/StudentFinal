@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    h1 Find Students
+    form(method="POST", action="/students/search")
+        table(style='border: 2px solid black')
+            tr
+                td: h3 Find students in Major
+                td: input(type="text", name="major" value=major)
+            tr
+                td: h3 Find students from State
+                td: input(type="text", name="state" value=state)
+            tr
+                td
+                td: input(type="submit"  value="Find Students")
+
+    h2= title
+    table
+        thead
+            th  Student Name
+            th  Major
+            th  Salary Potential
+            each student in students
+                tr
+                    td #{student.name}
+                    td #{student.major}
+                    td #{student.salary.formatMoney(0, "$ ")}
+    | Average Salary : #{average}

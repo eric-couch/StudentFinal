@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    h1 Student
+    each student in students
+        table(width="50%", border="1", cellpadding="0", cellspacing="0")
+            tr
+                td Id
+                td #{student.studentId}
+            tr
+                td Name
+                td #{student.name}
+            tr
+                td Major
+                td #{student.major}
+            tr
+                td Minor
+                td #{student.minor}
+            tr
+                td Home State
+                td #{student.state}
+            tr
+                td Salary
+                td #{student.salary}
+            tr
+                td Year In School
+                td #{student.year}
